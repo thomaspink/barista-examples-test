@@ -1,0 +1,83 @@
+// redeclare variables since the barista build cannot deal
+// with a relative reference to the lib folder here
+$gray-200: #e6e6e6;
+$gray-300: #cccccc;
+$turquoise-600: #00a1b2;
+
+.dt-demos-side-nav-searchform {
+  padding: 8px;
+}
+
+// replace this with the sidenav component as soon as this is ready
+.dt-demos-side-nav {
+  background-color: #f2f2f2;
+  font-family: 'BerninaSansWeb', 'OpenSans', sans-serif;
+  flex-basis: 400px;
+  min-width: 400px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dt-demos-side-nav-expandable-item {
+    border-top: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    background-color: $gray-200;
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .dt-demos-side-nav-expandable-item + .dt-demos-side-nav-expandable-item {
+    border-top: none;
+  }
+
+  .dt-demos-side-nav-expandable-item-open {
+    border-bottom: 2px solid $turquoise-600;
+  }
+
+  .dt-demos-side-nav-expandable-item + .dt-demos-side-nav-expandable-item-open {
+    border-top: 2px solid $turquoise-600;
+  }
+
+  .dt-demos-side-nav-expandable-item-open
+    + .dt-demos-side-nav-expandable-item-open {
+    border-top: none;
+  }
+
+  .dt-demos-side-nav-item-entry {
+    border: none;
+    background-color: transparent;
+    padding: 8px 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: 'BerninaSansWeb', 'OpenSans', sans-serif;
+    cursor: pointer;
+  }
+
+  .dt-expandable-panel-trigger ::ng-deep svg {
+    transition: transform 150ms ease-in-out;
+    fill: $turquoise-600;
+  }
+
+  .dt-expandable-panel-trigger-open ::ng-deep svg {
+    transform: rotate(180deg);
+  }
+
+  dt-icon {
+    flex: 0 1 20px;
+    height: 20px;
+  }
+
+  .dt-demos-side-nav-expandable-item ul li {
+    padding-left: 28px;
+  }
+
+  .dt-demos-side-nav-dt-link {
+    color: $turquoise-600;
+  }
+}

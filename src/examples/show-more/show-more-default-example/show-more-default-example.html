@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let entry of displayData">{{ entry }}</li>
+</ul>
+<button dt-show-more (click)="loadMore()" *ngIf="itemsLeft > 0">
+  Show {{ itemsLeft > noOfItems ? noOfItems : itemsLeft }} more
+</button>
+<p *ngIf="itemsLeft < 1" style="text-align: center;">
+  No more data available.
+</p>

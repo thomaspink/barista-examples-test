@@ -1,0 +1,20 @@
+<nav class="dt-demos-nav">
+  <dt-select
+    class="dt-demos-theme-selector"
+    placeholder="Select a theme"
+    [(ngModel)]="selectedTheme"
+    aria-label="Select a theme"
+  >
+    <dt-option *ngFor="let theme of themes" [value]="theme.value">
+      {{ theme.name }}
+    </dt-option>
+  </dt-select>
+</nav>
+
+<div class="dt-demos-content-wrapper" [dtTheme]="selectedTheme">
+  <dt-demos-side-nav [componentItems]="componentItems"></dt-demos-side-nav>
+
+  <main class="dt-demos-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
